@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var mui = require('material-ui');
 
 
 var PageView = React.createClass({
@@ -8,9 +9,8 @@ var PageView = React.createClass({
     if (this.props.selected) {
       var cssClass = 'selected';
     }
-    return <li className={cssClass}>
-        <a href="" {...this.props}>{this.props.children}</a>
-      </li>
+    
+    return <mui.FlatButton className={cssClass} {..this.props} label={this.props.children} />;
   }
 });
 
