@@ -10,7 +10,7 @@ var PageView = React.createClass({
       var cssClass = 'selected';
     }
     
-    return <mui.FlatButton className={cssClass} {..this.props} label={this.props.children} />;
+    return <mui.FlatButton className={cssClass} label={this.props.children} />;
   }
 });
 
