@@ -21,7 +21,8 @@
     "url": "https://github.com/AdeleD/react-paginate/issues"
   },
   "dependencies": {
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "material-ui": "callemall/material-ui#5e1bc35"
   },
   "devDependencies": {
     "browserify": "~6.0.3",
