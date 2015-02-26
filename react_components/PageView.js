@@ -6,11 +6,12 @@ var mui = require('material-ui');
 
 var PageView = React.createClass({
   render: function() {
+    var disabled = false;
     if (this.props.selected) {
-      var cssClass = 'selected';
+      disabled = true;
     }
-    
-    return <mui.FlatButton className={cssClass} label={this.props.children} />;
+
+    return <mui.FlatButton disabled={disabled} label={this.props.children} />;
   }
 });
 
