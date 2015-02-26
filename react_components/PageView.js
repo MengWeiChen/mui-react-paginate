@@ -11,7 +11,7 @@ var PageView = React.createClass({
       disabled = true;
     }
 
-    return <mui.FlatButton disabled={disabled} onClick={this.props.onClick} label={this.props.children} />;
+    return <mui.FlatButton disabled={disabled} onClick={this.props.onClick} label={"" + this.props.children} />;
   }
 });
 
