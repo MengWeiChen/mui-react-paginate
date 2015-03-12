@@ -60,7 +60,7 @@ var PaginationBoxView = React.createClass({
       <ul className="pagination">
         <li onClick={this.handlePreviousPage} className="previous">
           <mui.FlatButton disabled={disabled} label={this.props.previousLabel} />
-        </li>;
+        </li>
 
         <PaginationListView
           onPageSelected={this.handlePageSelected}
@@ -72,7 +72,7 @@ var PaginationBoxView = React.createClass({
 
         <li onClick={this.handleNextPage} className="next">
           <mui.FlatButton disabled={disabled} label={this.props.nextLabel} />
-        </li>;
+        </li>
       </ul>
     );
   }
