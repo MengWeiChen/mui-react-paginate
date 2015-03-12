@@ -50,11 +50,22 @@ var PaginationBoxView = React.createClass({
     }
   },
   render: function() {
+    var previousLink = <noscript />;
+    var nextLink = <noscript />;
+
+    if (this.props.pageNum > 1) {
+      previousLink = <li onClick={this.handlePreviousPage} className="previous">
+                      <a href="">{this.props.previousLabel}</a>
+                    </li>;
+
+      nextLink = <li onClick={this.handleNextPage} className="next">
+                  <a href="">{this.props.nextLabel}</a>
+                 </li>;
+    }
+
     return (
       <ul className="pagination">
-        <li onClick={this.handlePreviousPage} className="previous">
-          <a href="">{this.props.previousLabel}</a>
-        </li>
+        {previousLink}
 
         <PaginationListView
           onPageSelected={this.handlePageSelected}
@@ -64,9 +75,7 @@ var PaginationBoxView = React.createClass({
           marginPagesDisplayed={this.props.marginPagesDisplayed}
           breakLabel = {this.props.breakLabel} />
 
-        <li onClick={this.handleNextPage} className="next">
-          <a href="">{this.props.nextLabel}</a>
-        </li>
+        {nextLink}
       </ul>
     );
   }
