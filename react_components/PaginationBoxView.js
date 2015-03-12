@@ -53,9 +53,6 @@ var PaginationBoxView = React.createClass({
   render: function() {
     var disabled = this.props.pageNum <= 1;
 
-    // <a href="">{this.props.previousLabel}</a>
-    // <a href="">{this.props.nextLabel}</a>
-
     return (
       <ul className="pagination">
         <li onClick={this.handlePreviousPage} className="previous">
