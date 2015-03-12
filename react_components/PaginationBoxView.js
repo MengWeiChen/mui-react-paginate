@@ -58,7 +58,7 @@ var PaginationBoxView = React.createClass({
       <ul className="pagination">
         <li onClick={this.handlePreviousPage} className="previous">
           <a href="">{this.props.previousLabel}</a>
-        </li>;
+        </li>
 
         <PaginationListView
           onPageSelected={this.handlePageSelected}
@@ -70,7 +70,7 @@ var PaginationBoxView = React.createClass({
 
         <li onClick={this.handleNextPage} className="next">
           <a href="">{this.props.nextLabel}</a>
-        </li>;
+        </li>
       </ul>
     );
   }
