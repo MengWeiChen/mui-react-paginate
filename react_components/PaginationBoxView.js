@@ -2,6 +2,7 @@
 
 var React              = require('react');
 var PaginationListView = require("./PaginationListView");
+var mui                = require('material-ui');
 
 
 var PaginationBoxView = React.createClass({
@@ -50,22 +51,16 @@ var PaginationBoxView = React.createClass({
     }
   },
   render: function() {
-    var previousLink = <noscript />;
-    var nextLink = <noscript />;
+    var disabled = this.props.pageNum <= 1;
 
-    if (this.props.pageNum > 1) {
-      previousLink = <li onClick={this.handlePreviousPage} className="previous">
-                      <a href="">{this.props.previousLabel}</a>
-                    </li>;
-
-      nextLink = <li onClick={this.handleNextPage} className="next">
-                  <a href="">{this.props.nextLabel}</a>
-                 </li>;
-    }
+    // <a href="">{this.props.previousLabel}</a>
+    // <a href="">{this.props.nextLabel}</a>
 
     return (
       <ul className="pagination">
-        {previousLink}
+        <li onClick={this.handlePreviousPage} className="previous">
+          <mui.FlatButton disabled={disabled} label={this.props.previousLabel} />
+        </li>;
 
         <PaginationListView
           onPageSelected={this.handlePageSelected}
@@ -75,7 +70,9 @@ var PaginationBoxView = React.createClass({
           marginPagesDisplayed={this.props.marginPagesDisplayed}
           breakLabel = {this.props.breakLabel} />
 
-        {nextLink}
+        <li onClick={this.handleNextPage} className="next">
+          <mui.FlatButton disabled={disabled} label={this.props.nextLabel} />
+        </li>;
       </ul>
     );
   }
