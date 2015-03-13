@@ -29,6 +29,13 @@ var PaginationBoxView = React.createClass({
   getInitialState: function() {
     return {selected: this.props.initialSelected ? this.props.initialSelected :1};
   },
+  componentWillReceiveProps: function(nextProp) {
+    if (nextProp.initialSelected) {
+      this.setState({
+        selected: nextProp.initialSelected
+      });
+    }
+  },
   handlePageSelected: function(index, event) {
     event.preventDefault();
     if (this.state.selected !== index) {
